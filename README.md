@@ -118,4 +118,6 @@ Flags for the `self.interpret` function
 * `"BOL_HNDLE_DBGLST"` Handle debug list?
 * `"SHW_OUTPUT"` Show output `(Do not execute functions marked with ExecuteIfEnabled("SHW_OUTPUT") decorator)`
 * `"INTERP_EXEC_EVEN_IF_ERROR"` Execute even If there is a problem with command line arguments or current_line
-* `"INTERP_EXEC_EVEN_IF_RAISED"` Do not Raise error If there was an error with command execution? (`True = Do not raise error, False = Raise error`)
+* `"INTERP_EXEC_EVEN_IF_RAISED"` Do not Raise error If there was an error with command execution? (`True = Do not raise error, False = Raise error`)\
+Homepage: (Link to github page - main page for project and documentation and releases )[https://github.com/ProgrammEverything/Sarvar]\
+Issues: (Link to home-github page issues)[https://github.com/ProgrammEverything/Sarvar/issues]\
