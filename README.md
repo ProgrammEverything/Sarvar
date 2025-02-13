@@ -119,5 +119,5 @@ Flags for the `self.interpret` function
 * `"SHW_OUTPUT"` Show output `(Do not execute functions marked with ExecuteIfEnabled("SHW_OUTPUT") decorator)`
 * `"INTERP_EXEC_EVEN_IF_ERROR"` Execute even If there is a problem with command line arguments or current_line
 * `"INTERP_EXEC_EVEN_IF_RAISED"` Do not Raise error If there was an error with command execution? (`True = Do not raise error, False = Raise error`)\
-Homepage: https://github.com/ProgrammEverything/Sarvar\
+Homepage: https://github.com/ProgrammEverything/Sarvar \
 Issues: https://github.com/ProgrammEverything/Sarvar/issues
