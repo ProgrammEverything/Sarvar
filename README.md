@@ -39,7 +39,7 @@ Example:
 Each token is consisted of:
 ```
 globalvars (dict[str, str]): Global variables accessible throughout execution
-privatevars (dict[str, str]): Private variables for current scope
+privatevars (list[str]): Private variables for current scope
 args (list[str]): List of command arguments
 macros (dict[str, str]): Defined macro replacements
 current_line (int): Current line being executed
