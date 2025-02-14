@@ -12,7 +12,7 @@ or\
 `pip3 install Sarvar`
 ## How does it work?
 Engine(`cmd: dict[str, EngineCommandFunction]`, `logger: Logger = Logger()`)\
-cmd keyword argument: `List of all commands`
+`cmd` keyword argument: `List of all commands`
 * Structure
   - `{"Command": Callable of type EngineCommandFunction}`
 Each Command function is defined by the `@Engine.engine_command decorator factory`
