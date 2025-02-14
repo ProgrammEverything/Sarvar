@@ -17,13 +17,13 @@ How to install on mac, linux, ... : (PIP HAS TO BE INSTALLED)\
     pip3 install Sarvar
     ```-
 ## How does it work?
-The interpreter is in the Engine class.\
-Each "Engine" class instances will get a dictionary containing all of data necessary for the commands.
-* Structure
-  - `{"Command": FunctionInstance}`
-The "Engine" class calls a defined command's function with the specified arguments:
-* `CommandFunction(token: Token)`
-Each function has to be declared by the `Engine.engine_command` static decorator function.\
+Engine(`cmd: dict[str, EngineCommandFunction]`, `logger: Logger = Logger()`)
+cmd keyword argument: `List of all commands.\
+    * Structure\
+      - `{"Command": FunctionInstance of type EngineCommandFunction}`\
+Each Command function is defined by the @Engine.engine_command decorator factory\
+Each function gets these arguments\
+    * `CommandFunction(token: Token)`\
 Example:
 ```python
 @Engine.engine_command(bigger_than=0, lesser_than=float("inf"), macro_immutable=False)
@@ -34,7 +34,8 @@ Example:
 ```macro_immutable: bool``` -> Whether macro expansion should be allowed on command's `token.privatevar`\
 \
 ```bigger_than: int|float``` CLI Arguments should be bigger than `number` for infinite say float("inf")\
-```lesser_than``` CLI arguments should be lesser than `number` for infinite say float("inf")
+\
+```lesser_than: int|float``` CLI arguments should be lesser than `number` for infinite say float("inf")
 ### Tokens
 Each token is consisted of:
 ```
@@ -101,7 +102,7 @@ To setup an instance first import the "Sarvar" package
 \
 `interpret` -> interprets the current line (`self.current_line`) `(Args: None)`\
 \
-`HELPER_InterepetAll` -> interprets until the current line becomes bigger than all of the lines (`self.current_line < self.all_lines`)
+`HELPER_InterepetAll` -> interprets until the current line becomes bigger or equal than all of the lines (`self.current_line < self.all_lines`)
 `(Args: None)`\
 \
 `set_flag` -> Sets a specific flag to the specified value `(Args: str, bool)`\
@@ -118,6 +119,6 @@ Flags for the `self.interpret` function
 * `"BOL_HNDLE_DBGLST"` Handle debug list?
 * `"SHW_OUTPUT"` Show output `(Do not execute functions marked with ExecuteIfEnabled("SHW_OUTPUT") decorator)`
 * `"INTERP_EXEC_EVEN_IF_ERROR"` Execute even If there is a problem with command line arguments or current_line
-* `"INTERP_EXEC_EVEN_IF_RAISED"` Do not Raise error If there was an error with command execution? (`True = Do not raise error, False = Raise error`)\
+* `"INTERP_EXEC_EVEN_IF_RAISED"` Do not Raise error If there was an error with command execution (`True = Do not raise error, False = Raise error`)\
 Homepage: https://github.com/ProgrammEverything/Sarvar \
 Issues: https://github.com/ProgrammEverything/Sarvar/issues
