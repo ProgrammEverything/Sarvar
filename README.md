@@ -78,7 +78,7 @@ Insert a command or key into the `token.args` list to be handeled in the `_handl
 To setup an instance first import the "Sarvar" package
 ```python
 >>> import Sarvar as sr
->>> # Then make an instance by the following structure: Engine (cmd: dict[str, callable], logger: Logger = Logger() #Optional# )
+>>> # Then make an instance by the following structure: Engine (cmd: dict[str, EngineCommandFunction], logger: Logger = Logger() #Optional# )
 >>> myInstance = sr.Engine({}) # Meaning no commands by default
 ```
 #### Logger class
