@@ -17,7 +17,7 @@ How to install on mac, linux, ... : (PIP HAS TO BE INSTALLED)\
     pip3 install Sarvar
     ```-
 ## How does it work?
-Engine(`cmd: dict[str, EngineCommandFunction]`, `logger: Logger = Logger()`)
+Engine(`cmd: dict[str, EngineCommandFunction]`, `logger: Logger = Logger()`)\
 cmd keyword argument: `List of all commands.\
     * Structure\
       - `{"Command": FunctionInstance of type EngineCommandFunction}`\
