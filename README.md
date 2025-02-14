@@ -3,27 +3,21 @@ A simple assembly like interpreter implementation.
 Good for programs which need command shortcuts or command lines for their programs.\
 Not good in speed but good in simplicity.
 ## Installation
-(REQUIRES PYTHON>=3.8)\
+(REQUIRES PYTHON>=3.10)\
 How to install on windows:\
-    ```
-    py -m pip install Sarvar
-    ```\
+    `py -m pip install Sarvar`\
 How to install on mac, linux, ... : (PIP HAS TO BE INSTALLED)\
-    -```
-    python3 -m pip install Sarvar
-    ```-\
-    or\
-    -```
-    pip3 install Sarvar
-    ```-
+`python3 -m pip install Sarvar`\
+or\
+`pip3 install Sarvar`
 ## How does it work?
 Engine(`cmd: dict[str, EngineCommandFunction]`, `logger: Logger = Logger()`)\
 cmd keyword argument: `List of all commands`
-    * Structure\
-      - `{"Command": FunctionInstance of type EngineCommandFunction}`\
-Each Command function is defined by the @Engine.engine_command decorator factory\
-Each function gets these arguments\
-    * `CommandFunction(token: Token)`\
+* Structure
+  - `{"Command": Callable of type EngineCommandFunction}`
+Each Command function is defined by the `@Engine.engine_command decorator factory`
+* Each function gets these arguments
+    - `CommandFunction(token: Token)`
 Example:
 ```python
 @Engine.engine_command(bigger_than=0, lesser_than=float("inf"), macro_immutable=False)
@@ -94,24 +88,24 @@ To setup an instance first import the "Sarvar" package
             def log_debug(self, it): rich.print("[blue]"+ "DEBUG:\t" + str(it)+"[/blue]", file=self.debug_file)
             def log_print(self, it): rich.print("[cyan]OUTPUT:\t"+str(it)+"[/cyan]", file =self.print_file)
 
-`add_cmd` -> Adds a new command `(Args: str, callable)`\
-\
-`remove_cmd` -> Removes a command `(Args: str)`\
-\
-`push_to_stack` -> Pushes a command to execution stack (`self.commands`) and adds one to the len of execution stack (`self.all_lines`) `(Args: str)`\
-\
-`interpret` -> interprets the current line (`self.current_line`) `(Args: None)`\
-\
-`HELPER_InterepetAll` -> interprets until the current line becomes bigger or equal than all of the lines (`self.current_line < self.all_lines`)
-`(Args: None)`\
-\
-`set_flag` -> Sets a specific flag to the specified value `(Args: str, bool)`\
-\
-`unset_flag` -> Unsets a specific flag `(like the 'not' keyword)` `(Args: str)`\
-\
-`Flags` -> `[PROPERTY]` Returns the `self.readView`\
-\
-`get_cmd` -> `[PROPERTY]` Returns the `self.cmd` dictionary
+* `add_cmd` -> Adds a new command `(Args: str, callable)`
+
+* `remove_cmd` -> Removes a command `(Args: str)`
+
+* `push_to_stack` -> Pushes a command to execution stack (`self.commands`) and adds one to the len of execution stack (`self.all_lines`) `(Args: str)`
+
+* `interpret` -> interprets the current line (`self.current_line`) `(Args: None)`
+
+* `HELPER_InterepetAll` -> interprets until the current line becomes bigger or equal than all of the lines (`self.current_line < self.all_lines`) `(Args: None)`
+
+* `set_flag` -> Sets a specific flag to the specified value `(Args: str, bool)`
+
+* `unset_flag` -> Unsets a specific flag `(like the 'not' keyword)` `(Args: str)`
+
+* `Flags` -> `[PROPERTY]` Returns the `self.readView`
+
+* `get_cmd` -> `[PROPERTY]` Returns the `self.cmd` dictionary
+
 #### Flags
 Flags for the `self.interpret` function
 * `"_attributename_stop"` -> Raises an error when the attributename gets called `(attributes are functions starting with '_' such as '_error_attr')`
@@ -119,6 +113,15 @@ Flags for the `self.interpret` function
 * `"BOL_HNDLE_DBGLST"` Handle debug list?
 * `"SHW_OUTPUT"` Show output `(Do not execute functions marked with ExecuteIfEnabled("SHW_OUTPUT") decorator)`
 * `"INTERP_EXEC_EVEN_IF_ERROR"` Execute even If there is a problem with command line arguments or current_line
-* `"INTERP_EXEC_EVEN_IF_RAISED"` Do not Raise error If there was an error with command execution (`True = Do not raise error, False = Raise error`)\
+* `"INTERP_EXEC_EVEN_IF_RAISED"` Do not Raise error If there was an error with command execution (`True = Do not raise error, False = Raise error`)
 Homepage: https://github.com/ProgrammEverything/Sarvar \
 Issues: https://github.com/ProgrammEverything/Sarvar/issues
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+
+## Authors
+
+- [@programmeverything](https://github.com/ProgrammEverything)
