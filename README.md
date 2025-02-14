@@ -17,7 +17,7 @@ Engine(`cmd: dict[str, EngineCommandFunction]`, `logger: Logger = Logger()`)\
   - `{"Command": Callable of type EngineCommandFunction}`
 Each Command function is defined by the `@Engine.engine_command decorator factory`
 * Each function gets these arguments
-    - `CommandFunction(token: Token)`
+    - `CommandFunction(token: Token)`\
 Example:
 ```python
 @Engine.engine_command(bigger_than=0, lesser_than=float("inf"), macro_immutable=False)
@@ -25,6 +25,7 @@ Example:
             token.args.append("Print")
             token.args.append(" ".join(token.privatevars))
 ```
+#### Engine.engine_command arguments
 ```macro_immutable: bool``` -> Whether macro expansion should be allowed on command's `token.privatevar`\
 \
 ```bigger_than: int|float``` CLI Arguments should be bigger than `number` for infinite say float("inf")\
