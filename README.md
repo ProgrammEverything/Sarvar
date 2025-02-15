@@ -21,9 +21,9 @@ Each Command function is defined by the `@Engine.engine_command decorator factor
 Example:
 ```python
 @Engine.engine_command(bigger_than=0, lesser_than=float("inf"), macro_immutable=False)
-        def printContent(token: Token) :
-            token.args.append("Print")
-            token.args.append(" ".join(token.privatevars))
+def printContent(token: Token) :
+    token.args.append("Print")
+    token.args.append(" ".join(token.privatevars))
 ```
 #### `Engine.engine_command` arguments
 ```macro_immutable: bool``` -> Whether macro expansion should be allowed on command's `token.privatevar`\
