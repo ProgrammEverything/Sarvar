@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[project]
+name = "Sarvar"
+version = "2.0.0"
+authors = [
+  { name="Sasan Salehi", email="sasanxcoder@gmail.com" },
+  {name = "Sasan Salehi"}
+]
+dependencies = [
+  "rich>=13.7.1"
+]
+maintainers = [
+  { name="Sasan salehi", email="sasanxcoder@gmail.com" },
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+keywords = ["Sarvar interpreter", "Sarvar", "Simple interpreter for programs", "Assembly like interpreter in python", "Python interpreter", "Sarvar interpreter python"]
+description = "A simple assembly like interpreter implementation. Good for programs which need command shortcuts or command lines for their programs. Not good in speed but good in simplicity."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Utilities",
+]
+homepage = "https://github.com/ProgrammEverything/Sarvar"
+issues = "https://github.com/ProgrammEverything/Sarvar/issues"
+documentation = "https://github.com/ProgrammEverything/Sarvar"
+repository    = "https://github.com/ProgrammEverything/Sarvar"
+[project.urls]
+"homepage" = "https://github.com/ProgrammEverything/Sarvar"
+"issues" = "https://github.com/ProgrammEverything/Sarvar/issues"
+"documentation" = "https://github.com/ProgrammEverything/Sarvar"
+"repository"    = "https://github.com/ProgrammEverything/Sarvar"
