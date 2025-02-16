@@ -117,7 +117,8 @@ Flags for the `self.interpret` function
 * `"INTERP_EXEC_EVEN_IF_RAISED"` Do not Raise error If there was an error with command execution (`True = Do not raise error, False = Raise error`)
 ## Links
 Homepage: https://github.com/ProgrammEverything/Sarvar \
-Issues: https://github.com/ProgrammEverything/Sarvar/issues
+Issues: https://github.com/ProgrammEverything/Sarvar/issues \
+PyPi page: https://pypi.org/project/Sarvar/
 
 ## License
 
